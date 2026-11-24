@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package meeting.server.v1;
+
+service UserService {
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+}
+
+message UserInfo {
+  string user_id = 1;
+  string username = 2;
+  uint32 client_ip = 3;
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  uint32 client_ip = 3;
+}
+
+message RegisterResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  UserInfo user = 3;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+  uint32 client_ip = 3;
+}
+
+message LoginResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  UserInfo user = 3;
+}

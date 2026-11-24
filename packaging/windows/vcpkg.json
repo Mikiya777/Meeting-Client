@@ -1,0 +1,19 @@
+{
+  "name": "meeting-client-windows",
+  "version-string": "1.0.0",
+  "builtin-baseline": "9432c416e5c543eded0b4df35a4d347b2e669208",
+  "dependencies": [
+    { "name": "curl", "default-features": false, "features": ["ssl"] },
+    "grpc",
+    { "name": "libdatachannel", "default-features": false, "features": ["srtp"] },
+    "libsamplerate",
+    "miniaudio",
+    "nlohmann-json",
+    { "name": "opencv4", "default-features": false },
+    "openh264",
+    "opus",
+    "protobuf",
+    "speexdsp",
+    "spdlog"
+  ]
+}

@@ -1,0 +1,206 @@
+QWidget {
+    color: #20242b;
+    font-family: "PingFang SC", sans-serif;
+    font-size: 14px;
+}
+
+QDialog,
+QMessageBox {
+    color: #20242b;
+    background: #f4f6f8;
+}
+
+QDialog QLabel,
+QDialog QRadioButton,
+QMessageBox QLabel {
+    color: #20242b;
+    background: transparent;
+}
+
+QRadioButton:disabled,
+QLabel:disabled {
+    color: #8a94a3;
+}
+
+QWidget#meetingWindow {
+    background: #f4f6f8;
+}
+
+QFrame#meetingHomePage {
+    background: #dfe3e7;
+}
+
+QFrame#homeNavigation,
+QFrame#homePanel {
+    background: #ffffff;
+    border: none;
+    border-radius: 9px;
+}
+
+QLabel#homeClock {
+    color: #202124;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+QLabel#homeDate {
+    color: #71768a;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+QToolButton#homeCreateButton,
+QToolButton#homeJoinButton {
+    min-width: 0;
+    min-height: 0;
+    padding: 4px 2px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: #535d6c;
+    font-weight: 500;
+}
+
+QToolButton#homeCreateButton:hover,
+QToolButton#homeJoinButton:hover {
+    background: #f2f5f9;
+}
+
+QToolButton#homeCreateButton:pressed,
+QToolButton#homeJoinButton:pressed {
+    background: #e8eef6;
+}
+
+QToolButton#homeCreateButton:focus,
+QToolButton#homeJoinButton:focus {
+    border-color: #9bbbe6;
+}
+
+QFrame#topBar,
+MeetingControlBar,
+MeetingSidePanel {
+    background: #ffffff;
+    border: 1px solid #d8dde5;
+}
+
+QFrame#topBar {
+    border-radius: 6px;
+}
+
+QLabel#meetingTitle {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+QLabel#meetingMeta {
+    color: #68717d;
+}
+
+QPushButton {
+    min-width: 82px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid #cbd2dc;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+QToolButton {
+    min-width: 96px;
+    min-height: 36px;
+    padding: 0 10px;
+    border: 1px solid #cbd2dc;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+QToolButton:hover,
+QToolButton:pressed {
+    background: #eef3f8;
+}
+
+QToolButton:disabled {
+    color: #8a94a3;
+    background: #eef1f5;
+}
+
+QMenu {
+    color: #20242b;
+    padding: 5px;
+    border: 1px solid #cbd2dc;
+    background: #ffffff;
+}
+
+QMenu::item {
+    min-width: 220px;
+    min-height: 30px;
+    padding: 2px 24px;
+}
+
+QMenu::item:selected {
+    background: #eef3f8;
+}
+
+QPushButton:hover {
+    background: #eef3f8;
+}
+
+QPushButton:checked {
+    color: #ffffff;
+    border-color: #1677ff;
+    background: #1677ff;
+}
+
+QPushButton#leaveButton {
+    color: #ffffff;
+    border-color: #d92d20;
+    background: #d92d20;
+}
+
+QPushButton#leaveButton:hover {
+    background: #b42318;
+}
+
+QFrame#sideHeader {
+    border: none;
+    border-bottom: 1px solid #e4e7ec;
+}
+
+QLabel#sideTitle {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QListWidget,
+QLineEdit {
+    color: #20242b;
+    border: 1px solid #d8dde5;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+QLineEdit:disabled {
+    color: #8a94a3;
+    background: #eef1f5;
+}
+
+QListWidget {
+    padding: 4px;
+}
+
+QLineEdit {
+    min-height: 34px;
+    padding: 0 8px;
+}
+
+QSplitter::handle {
+    width: 4px;
+    background: #d8dde5;
+}
+
+QLabel#notificationToast {
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 5px;
+    background: #20242b;
+}

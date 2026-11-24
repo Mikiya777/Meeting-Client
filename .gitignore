@@ -1,0 +1,61 @@
+# CMake build directories
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+/packaging/windows/vcpkg_installed/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+install_manifest.txt
+
+# Compiled binaries and libraries
+*.a
+*.app
+*.dylib
+*.dll
+*.exe
+*.lib
+*.o
+*.obj
+*.so
+
+# Qt generated files
+*_autogen/
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+
+# IDEs and editors
+/.cache/
+/.vscode/
+/.idea/
+*.code-workspace
+*.user
+*.user.*
+*.suo
+*.swp
+*.tmp
+
+# macOS
+.DS_Store
+
+# Local third-party source drops
+/src/capture/third_party/obs/obs-studio/
+/src/capture/third_party/obs/sdk/
+
+# docs
+/docs
+
+# Logs and coverage
+*.log
+*.gcda
+*.gcno
+coverage/

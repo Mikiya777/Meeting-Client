@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package meeting.server.v1;
+
+import "user_service.proto";
+
+service MeetingService {
+  rpc CreateMeeting(CreateMeetingRequest) returns (CreateMeetingResponse) {}
+  rpc JoinMeeting(JoinMeetingRequest) returns (JoinMeetingResponse) {}
+  rpc LeaveMeeting(LeaveMeetingRequest) returns (LeaveMeetingResponse) {}
+  rpc EndMeeting(EndMeetingRequest) returns (EndMeetingResponse) {}
+  rpc GetMeeting(GetMeetingRequest) returns (GetMeetingResponse) {}
+  rpc ListMeetings(ListMeetingsRequest) returns (ListMeetingsResponse) {}
+  rpc SubscribeMeetingEvents(SubscribeMeetingEventsRequest)
+      returns (stream MeetingEvent) {}
+}
+
+message MediaRoute {
+  string push_server_url = 1;
+  string pull_server_url = 2;
+  string srs_app = 3;
+  string srs_secret = 4;
+  string stream_prefix = 5;
+}
+
+message MeetingInfo {
+  string meeting_id = 1;
+  string title = 2;
+  string description = 3;
+  UserInfo creator = 4;
+  repeated UserInfo participants = 5;
+  bool active = 6;
+  MediaRoute media_route = 7;
+}
+
+message CreateMeetingRequest {
+  UserInfo creator = 1;
+  string title = 2;
+  string description = 3;
+  int64 start_time = 4;
+}
+
+message CreateMeetingResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  MeetingInfo meeting = 3;
+}
+
+message JoinMeetingRequest {
+  UserInfo user = 1;
+  string meeting_id = 2;
+}
+
+message JoinMeetingResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  MeetingInfo meeting = 3;
+}
+
+message LeaveMeetingRequest {
+  UserInfo user = 1;
+  string meeting_id = 2;
+}
+
+message LeaveMeetingResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  repeated UserInfo participants = 3;
+}
+
+message EndMeetingRequest {
+  UserInfo user = 1;
+  string meeting_id = 2;
+}
+
+message EndMeetingResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  repeated UserInfo participants = 3;
+}
+
+message GetMeetingRequest {
+  string meeting_id = 1;
+}
+
+message GetMeetingResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  MeetingInfo meeting = 3;
+}
+
+message ListMeetingsRequest {
+  bool active_only = 1;
+}
+
+message ListMeetingsResponse {
+  uint32 error_code = 1;
+  string error_message = 2;
+  repeated MeetingInfo meetings = 3;
+}
+
+message SubscribeMeetingEventsRequest {
+  UserInfo user = 1;
+  string meeting_id = 2;
+}
+
+enum MeetingEventType {
+  MEETING_EVENT_UNKNOWN = 0;
+  USER_JOINED = 1;
+  USER_LEFT = 2;
+  MEETING_ENDED = 3;
+}
+
+message MeetingEvent {
+  MeetingEventType type = 1;
+  string meeting_id = 2;
+  UserInfo user = 3;
+  repeated UserInfo participants = 4;
+}
